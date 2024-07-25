@@ -1,0 +1,22 @@
+#---A D V A N C E D---
+
+def bot8(pbot, p8_bot, p8_human):
+    # Calculate the probability of having 8-digits in the username
+    p_human = 1 - pbot
+    p8_digits = (p8_bot * pbot) + (p8_human * p_human)
+    
+    # Calculate the probability of being a bot given 8-digits in the username
+    if p8_digits == 0:
+        pbot_given_8_digits = 0  # Avoid division by zero
+    else:
+        pbot_given_8_digits = (p8_bot * pbot) / p8_digits
+    
+    # Print the result with full precision
+    print(f"{pbot_given_8_digits}")
+
+# Test with given values
+pbot = 0.1
+p8_bot = 0.8
+p8_human = 0.05
+
+bot8(pbot, p8_bot, p8_human)
