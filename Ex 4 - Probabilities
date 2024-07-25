@@ -1,0 +1,15 @@
+#---A D V A N C E D---
+
+import random
+
+def main():
+    if random.random() < 0.8:
+        favourite = "dogs"
+        print("I love " + favourite) 
+    if random.random() < 0.1:
+        favourite = "cats"
+        print("I love " + favourite) 
+    if random.random() < 0.1:
+        favourite = "bats"
+        print("I love " + favourite) 
+main()
