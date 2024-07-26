@@ -1,0 +1,19 @@
+#---A D V A N C E D---
+
+# Input values for three cabins: size, size of sauna, distance to water, number of indoor bathrooms,
+# proximity of neighbors
+X = [
+    [66, 5, 15, 2, 500], 
+    [21, 3, 50, 1, 100], 
+    [120, 15, 5, 2, 1200]
+]
+c = [3000, 200, -50, 5000, 100]  # Coefficient values
+
+def predict(X, c):
+    for cabin in X:
+        price = 0
+        for feature, coefficient in zip(cabin, c):
+            price += feature * coefficient
+        print(price)
+
+predict(X, c)
