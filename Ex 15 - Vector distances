@@ -1,0 +1,25 @@
+#---A D V A N C E D---
+
+import numpy as np
+
+# Generate random training data and test data
+x_train = np.random.rand(10, 3)   # 10 random vectors of dimension 3
+x_test = np.random.rand(3)        # One random vector of dimension 3
+
+def dist(a, b):
+    # Compute the Euclidean distance between two vectors
+    return np.sqrt(np.sum((a - b) ** 2))
+
+def nearest(x_train, x_test):
+    nearest_index = -1
+    min_distance = np.Inf
+    # Loop through each vector in x_train
+    for i, train_vector in enumerate(x_train):
+        distance = dist(train_vector, x_test)
+        # Update the nearest vector if the current distance is smaller
+        if distance < min_distance:
+            min_distance = distance
+            nearest_index = i
+    print(nearest_index)
+
+nearest(x_train, x_test)
